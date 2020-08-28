@@ -3,6 +3,7 @@
 #import "DDCometTransport.h"
 #import "DDCometMessage.h"
 #import "DDCometSubscription.h"
+#import <UIKit/UIKit.h>
 
 @protocol DDCometClientDelegate;
 @protocol DDCometClientSubscriptionDelegate;

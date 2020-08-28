@@ -9,7 +9,7 @@
 #import "DDCometMessage.h"
 #import "DDCometSubscription.h"
 #import "DDConcurrentQueue.h"
-#import "DDCometWebSocketTransport.h"
+//#import "DDCometWebSocketTransport.h"
 #import "DDCometURLSessionLongPollingTransport.h"
 
 #define kCometErrorClientNotFound 402
@@ -158,7 +158,6 @@ extern void DDCometLog(NSString *format, ...);
             {
             _disconnectTimer = [NSTimer timerWithTimeInterval:0.5 target:self selector:@selector(handleDisconnection) userInfo:nil repeats:NO];
             }
-        
         DDCometMessage *message = [DDCometMessage messageWithChannel:@"/meta/disconnect"];
         [self sendMessage:message];
         return message;
@@ -166,7 +165,6 @@ extern void DDCometLog(NSString *format, ...);
     else
         {
         self.state = DDCometStateDisconnected;
-        
         return nil;
         }
 }
@@ -631,16 +629,17 @@ extern void DDCometLog(NSString *format, ...);
 
 - (Class) getTransportClass:(DDCometSupportedTransport) transport
 {
-    NSAssert(transport & (DDCometWebSocketSupportedTransport | DDCometLongPollingSupportedTransport), @"transport is not supported transport");
+//    NSAssert(transport & (DDCometWebSocketSupportedTransport | DDCometLongPollingSupportedTransport), @"transport is not supported transport");
     
-    if (transport & DDCometWebSocketSupportedTransport)
-        {
-        return [DDCometWebSocketTransport class];
-        }
-    else //if (transport & DDCometLongPollingSupportedTransport) # Implied with the Assert
-        {
-        return [DDCometURLSessionLongPollingTransport class];
-        }
+    return [DDCometURLSessionLongPollingTransport class];
+//    if (transport & DDCometWebSocketSupportedTransport)
+//        {
+//        return [DDCometWebSocketTransport class];
+//        }
+//    else //if (transport & DDCometLongPollingSupportedTransport) # Implied with the Assert
+//        {
+//        return [DDCometURLSessionLongPollingTransport class];
+//        }
 }
 
 - (void) transportDidFail:(id<DDCometTransport>)transport

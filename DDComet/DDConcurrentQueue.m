@@ -2,7 +2,7 @@
 #import "DDConcurrentQueue.h"
 #import <objc/objc-auto.h>
 #import <libkern/OSAtomic.h>
-
+#import "stdatomic.h"
 
 @interface DDConcurrentQueueNode : NSObject
 {
