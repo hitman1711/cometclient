@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
                    * Finally, don't worry about the indent, CocoaPods strips it!
                    DESC
 
-  s.homepage     = "https://github.com/mikeleo/cometclient"
+  s.homepage     = "https://github.com/hitman1711/cometclient"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -71,7 +71,7 @@ Pod::Spec.new do |s|
   #
 
 #s.source       = { :git => "https://github.com/mikeleo/cometclient.git", :commit => "fc6f07b40730083f88ea8d7e81aad2a1900e7d2f" }
-s.source = { :git => "https://github.com/mikeleo/cometclient.git"}
+s.source = { :git => "https://github.com/hitman1711/cometclient.git"}
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -112,6 +112,6 @@ s.source = { :git => "https://github.com/mikeleo/cometclient.git"}
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   #  s.dependency 'CocoaLumberjack',  '~> 1.7.0'
 
-  s.dependency 'SocketRocket', '~> 0.3.1-beta2'
+  # s.dependency 'SocketRocket', '~> 0.3.1-beta2'
 
 end
