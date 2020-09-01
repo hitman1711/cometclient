@@ -42,7 +42,7 @@
 
         NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
         configuration.timeoutIntervalForRequest = self.timeoutInterval;
-
+        configuration.HTTPCookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
         NSURLSession *session =
         [NSURLSession sessionWithConfiguration:configuration
                                       delegate:self
